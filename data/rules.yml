@@ -1,0 +1,18 @@
+version: "2.0"
+
+# only rules included are the ones pointing to greeting and goodbye. Both reset all slots.
+
+rules:
+
+- rule: greet_rule
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_restart
+
+- rule: bye_rule
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart
+

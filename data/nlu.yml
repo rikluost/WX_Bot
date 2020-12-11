@@ -1,0 +1,240 @@
+version: "2.0"
+# user intents with examples
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - Hallo
+    - hi there
+    - greetings
+    - howdy
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks
+    - thank you
+    - cheers
+    - exit
+    - quit
+
+# example questions when location is given by the user
+- intent: weather_in_city
+  examples: |
+    - what is the [weather](wx_type) [tomorrow](forecast_period) in [Auckland](city)?
+    - how's the [weather](wx_type) [now](forecast_period) in [Christchurch](city)?
+    - Tell me the [weather](wx_type) [today](forecast_period) in [Auckland](city)
+    - [weather](wx_type) in [Auckland](city) [tomorrow](forecast_period)
+    - is it [windy](wx_type) in [Auckland](city) [today](forecast_period)
+    - [raining](wx_type) [tomorrow](forecast_period) in [Wellington](city)
+    - is it [cloudy](wx_type) in [Christchurch](city) [tomorrow](forecast_period)
+    - [today](forecast_period) [rain](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Christchurch](city) [tomorrow](forecast_period)
+    - [temperature](wx_type) [current](forecast_period) in [Auckland](city)
+    - what is the [temperature](wx_type) in [Christchurch](city) [today](forecast_period)
+    - is it going to be [temperature](wx_type) in [Christchurch](city) [today](forecast_period)
+    - [wind](wx_type) in [Christchurch](city) [today](forecast_period)
+    - is it going to [rain](wx_type) in [Wellington](city) [tomorrow](forecast_period)
+    - [humid](wx_type) [today](forecast_period) in [Wellington](city)
+    - is it [windy](wx_type) [today](forecast_period) in [Auckland](city)
+    - is it going to [rain](wx_type) in [Christchurch](city) [tomorrow](forecast_period)
+    - is it going to be [cloudy](wx_type) in [Christchurch](city) [tomorrow](forecast_period)
+    - air [pressure](wx_type) in [Christchurch](city) [current](forecast_period)
+    - [pressure](wx_type) in [Christchurch](city) [today](forecast_period)
+    - what is the [pressure](wx_type) in [Auckland](city) [tomorrow](forecast_period)
+    - [humidity](wx_type) in [Christchurch](city) [tomorrow](forecast_period)
+    - [uvi](wx_type) in [Auckland](city) [today](forecast_period)
+    - what is the [humidity](wx_type) in [Auckland](city) [tomorrow](forecast_period)
+    - [rain](wx_type) [Wellington](city) [tomorrow](forecast_period)
+    - [Auckland](city) [current](forecast_period)
+    - [Wellington](city) [tomorrow](forecast_period)
+    - [Auckland](city)
+    - [Wellington](city)
+    - what is the [weather](wx_type) in [Auckland](city)?
+    - how's the [UV index](wx_type) in [Christchurch](city)?
+    - Tell me the [weather](wx_type) in [Auckland](city)
+    - [weather](wx_type) in [Auckland](city)
+    - [weather](wx_type) in [Wellington](city)
+    - is it [windy](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Wellington](city)
+    - is it [cloudy](wx_type) in [Christchurch](city)
+    - [rain](wx_type) in [Auckland](city)
+    - [raining](wx_type) in [Christchurch](city)
+    - [temperature](wx_type) in [Auckland](city)
+    - what is the [temperature](wx_type) in [Christchurch](city)
+    - is it going to be [cloudy](wx_type) in [Christchurch](city)
+    - is it going to [UV index](wx_type) in [Wellington](city)
+    - what is the [weather](wx_type) for [Wellington](city)
+    - what is the [pressure](wx_type) in [Auckland](city)
+    - air [pressure](wx_type) in [Auckland](city)
+    - what is the [humidity](wx_type) in [Auckland](city)
+    - air [humidity](wx_type) in [Auckland](city)
+    - [uvi](wx_type) [Auckland](city)
+    - [weather](wx_type) [Wellington](city)
+    - how about [Wellington](city)
+
+# example questions of when location is not given
+- intent: weather_without_city
+  examples: |
+    - what is the [weather](wx_type) [today](forecast_period)?
+    - how's the [weather](wx_type) [tomorrow](forecast_period)?
+    - Tell me the [weather](wx_type) [today](forecast_period)
+    - [weather](wx_type) [tomorrow](forecast_period)
+    - is it [windy](wx_type) [current](forecast_period)
+    - [raining](wx_type) [today](forecast_period)
+    - is it [cloudy](wx_type) [tomorrow](forecast_period)
+    - [rain](wx_type) [today](forecast_period)
+    - [temperature](wx_type) [tomorrow](forecast_period)
+    - what is the [temperature](wx_type) [tomorrow](forecast_period)
+    - what is the [pressure](wx_type) [tomorrow](forecast_period)
+    - air [pressure](wx_type) [tomorrow](forecast_period)
+    - how is the weather [tomorrow](forecast_period)?
+    - what is the weather  [current](forecast_period)?
+    - is it going to [rain](wx_type)?
+    - is going to be [sunny](wx_type?
+    - what are the [conditions](wx_type) [tomorrow](forecast_period)?
+    - [weather](wx_type)
+    - [rain](wx_type)
+    - [wind](wx_type)
+    - [pressure](wx_type)
+    - [humidity](wx_type)
+    - how about [wind](wx_type)
+    - [sunny](wx_type)
+    - [rainy](wx_type)
+    - [snow](wx_type)
+    - [sun](wx_type)
+    - [pissing](wx_type)
+    - [shining](wx_type)
+
+# tricky questions.... 
+- intent: who_are_you
+  examples: |
+    - who are you
+    - are you a bot
+    - what is your name
+    - are you human
+    - what are you
+
+# chitchat.... 
+- intent: how_are_you
+  examples: |
+    - how are you
+    - are you ok
+    - nice to meet, how are you
+    - howdy
+    - hows it hanging
+    - how is it going
+    - hows it going
+
+# questions about what can I do
+- intent: capabilities
+  examples: |
+    - what can you do
+    - what are your capabilities
+    - what are you good at
+    - what are you good for
+    - any instructions
+    - instructions
+    - how do i use this
+    - info
+    - information
+    - help
+
+# synonym defnitions to limit variations and to help NLU
+- synonym: current
+  examples: |
+    - currently
+    - now
+    - current
+
+- synonym: today
+  examples: |
+    - later
+    - today
+    - later today
+    - going to
+
+- synonym: tomorrow
+  examples: |
+    - tomorrow
+
+- synonym: uvi
+  examples: |
+    - uvi
+    - UV
+    - UV index
+
+- synonym: cloud_conditions
+  examples: |
+    - raining
+    - wet
+    - rain
+    - conditions
+    - condition
+    - clouds
+    - snow
+    - snowing
+    - sunny
+    - pissing
+    - hosing
+    - pooring
+    - cloudy
+    - rainy
+    - shining
+    - sun
+    - rainfall
+    - snowfall
+
+- synonym: temperature
+  examples: |
+    - hot
+    - cold
+    - chilly
+    - heat
+    - temp
+    - temperature
+
+- synonym: wind
+  examples: |
+    - windy
+    - breeze
+    - breezy
+    - gust
+    - gusty
+    - gale
+    - wind
+
+- synonym: weather
+  examples: |
+    - weather
+    - wx
+    - forecast
+
+- synonym: humid
+  examples: |
+    - humidity
+    - humid
+
+- synonym: Auckland
+  examples: |
+    - Auckland
+    - auckland
+
+
+- synonym: Wellington
+  examples: |
+    - Wellington
+    - wellington
+
+- synonym: Christchurch
+  examples: |
+    - Christchurch
+    - christchurch
