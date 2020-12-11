@@ -15,6 +15,10 @@ The weather data format chosen here is defined by OpenWeather (https://openweath
 
 The conversation is initiated by the end-user. A greeting or a goodbye should reset any prior assumptions or knowledge collected by the bot during previous interactions. When time or weather detail are not contained in the query, the bot shall report the current and generic weather conditions. When the city is not provided in the query, the bot shall request for it. Any further specifics in the query should be answered in more detail if information is available. 
 
+![](wxbot_diagram_12062020.png "Conversation flow")
+*Figure 1: Conversation flow*
+
+
 ## Implementation
 
 All components defined to support the conversation flow. The end-user intents here are: **greet, goodbye, weather_in_city, weather_without_city, capabilities, how_are_you and who_are_you**.
