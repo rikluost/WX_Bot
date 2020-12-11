@@ -1,8 +1,8 @@
-# Rasa Open source 2.0 Weather Chatbot
+# Weather Chatbot with Rasa Open source 2.0 Conversational AI 
 
 ## introduction
 
-As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have instant access to information they refer to and are efficient in assisting users. Weather chatbot is an excellent use case example for the technology. 
+As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*). Weather chatbot is an excellent use case example for the technology.
 
 The content of a chatbot consists of the personality, conversation flows and the information it can deliver to the user. Personality is created by interactions and responses and by acting differently in different situations. These responses should be designed so that it maximises the engagement between the bot and the user (Katz, 2019, *The Ultimate Guide to chatbot personality*, Chatbots Magazine). An important part of the engagement is the ability to respond to any chitchat. The weather chatbot described here aims to use these principles, however due to the efforts required, in a rather minimalistic way leaving plenty of room for future improvements.
 
