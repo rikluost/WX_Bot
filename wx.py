@@ -7,6 +7,8 @@ import requests
 
 use_openweather_API = False
 
+# note that the API does not support cities, but you'll need to provide coordinates as below
+
 def wx_city(city, use_API=False):
     
     if use_API == True:
@@ -22,6 +24,7 @@ def wx_city(city, use_API=False):
         wx_data = requests.get(Final_url).json()
 
     else:
+        
     # for testing & exam purposes, return standard, pre-fetched openweather format for Auckland, Wellington. 
     # Messages were queried on 6th of December 2020 
 
