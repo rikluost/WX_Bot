@@ -7,7 +7,7 @@ import requests
 
 use_openweather_API = False
 
-# note that the API does not support cities, but you'll need to provide coordinates as below
+# note that the OpenWeather one-call API does not support cities, but you'll need to provide coordinates as below
 
 def wx_city(city, use_API=False):
     
