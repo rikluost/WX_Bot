@@ -8,12 +8,7 @@ The content of a chatbot consists of the personality, conversation flows and the
 
 ## Weather data
 
-The weather data format chosen here is defined by OpenWeather (OpenWeatherMap.com, n.d), which provides weather data freely for developers. Auckland, Wellington, and Christchurch data are prefetched for testing purposes. For activating the API, modify:
-
-```python
-use_openweather_API = True
-API_key = "Insert your key here"
-```
+The weather data format chosen here is defined by OpenWeather (https://openweathermap.org/), which provides weather data freely for developers. Auckland, Wellington, and Christchurch data are prefetched for testing purposes. 
 
 
 ## Conversation Flow
@@ -69,4 +64,11 @@ Start the discussion with wxbot:
 rasa shell
 ```
 
+## Activating OpenWeatherMap API
 
+For activating the API, the below needs to be modified and a valid API key inserted. API key is available from https://openweathermap.org/
+
+```python
+use_openweather_API = True
+API_key = "Insert your key here"
+```
