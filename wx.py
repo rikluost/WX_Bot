@@ -7,7 +7,7 @@ import requests
 
 use_openweather_API = False
 
-# note that the OpenWeather one-call API does not support cities, but you'll need to provide coordinates as below
+# note that the OpenWeather one-call API does not support cities (as of 14/12/2020), but you'll need to provide coordinates as below. Any city with coordinates will do
 
 def wx_city(city, use_API=False):
     
@@ -18,6 +18,7 @@ def wx_city(city, use_API=False):
             lat, lon = -41.2, 174.8
         if city == "Christchurch":
             lat, lon = -43.5, 172.6
+         
         API_key = "Insert your key here"
         openweather_url = "http://api.openweathermap.org/data/2.5/onecall?"
         Final_url = openweather_url + "appid=" + API_key + "&lat=" + str(lat) + "&lon=" + str(lon) + "&units=metric" + "&exclude=hourly,minutely,alerts"

@@ -1,8 +1,8 @@
 # load some libraries
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 from wx import wx_city
 
 class Weather(Action):
@@ -17,12 +17,6 @@ class Weather(Action):
         wx_type = tracker.get_slot('wx_type')
         forecast_period = tracker.get_slot('forecast_period')
 
-        # for debugging only:
-        #try:
-        #    print(city + "," +wx_type + ","+ forecast_period)
-        #except:
-        #    print("could not print")
-
         # set values for empty slots
         if forecast_period is None:
             forecast_period  = "current"
@@ -34,16 +28,16 @@ class Weather(Action):
         if forecast_period == "tomorrow":
            drow = 1
 
-        # possible cities for training work purposes only     
+        # list possible cities     
         possible_cities=["Auckland","Wellington","Christchurch"]
 
-        # Default answer if better answer is not found
+        # Default answer if better answer cannot be found
         response="Sorry, got no idea - but I hope it's going to be sunny and warm. "
 
-        # read information and generate message
+        # read & parse the information and generate response
         if city in possible_cities:
             
-            # get the weather information from function defined in wx.py which is located in the root of this rasa chatbot 
+            # get the weather information from function defined in wx.py
             open_wx_msg = wx_city(city)
 
             # set values to current weather variables from open_wx_msg json
@@ -64,7 +58,8 @@ class Weather(Action):
             wind_deg_predict=round(open_wx_msg['daily'][drow]['wind_deg'])
             cond_predict=(open_wx_msg['daily'][drow]['weather'][0]["description"])
             uvi_predict=round(open_wx_msg['daily'][drow]['uvi'])
-            # set predicted rainfall to 0 if field missing
+
+            # set predicted rainfall to 0 if field missing - OpenWeather API seems to not return it at all if 0
             try: 
                 rain_predict=round(open_wx_msg['daily'][drow]['rain'],1)
             except:
@@ -111,8 +106,7 @@ class Weather(Action):
 
         # reponse for if city is not in range of supported cities
         else:
-            response = "Sorry, for testing purposes I am limited to information from Auckland, Christchurch and Wellington only."
+            response = "Sorry, currently I am limited to information from Auckland, Christchurch and Wellington only."
 
         # send the response back to rasa
         dispatcher.utter_message(response)
-

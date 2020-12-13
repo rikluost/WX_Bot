@@ -11,6 +11,7 @@ nlu:
     - hi there
     - greetings
     - howdy
+    - Hi
 
 - intent: goodbye
   examples: |
@@ -80,6 +81,7 @@ nlu:
     - [uvi](wx_type) [Auckland](city)
     - [weather](wx_type) [Wellington](city)
     - how about [Wellington](city)
+    - [humidity] (wx_type) in [Christchurch](city)
 
 # example questions of when location is not given
 - intent: weather_without_city
@@ -113,6 +115,10 @@ nlu:
     - [sun](wx_type)
     - [pissing](wx_type)
     - [shining](wx_type)
+    - how about [tomorrow](forecast_period)
+    - and [tomorrow](forecast_period)
+    - howabout later [today](forecast_period)
+    - later [today](forecast_period)
 
 # tricky questions.... 
 - intent: who_are_you
@@ -147,6 +153,7 @@ nlu:
     - info
     - information
     - help
+    - can you help me
 
 # synonym defnitions to limit variations and to help NLU
 - synonym: current
@@ -161,6 +168,7 @@ nlu:
     - today
     - later today
     - going to
+
 
 - synonym: tomorrow
   examples: |

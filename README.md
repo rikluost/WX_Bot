@@ -1,14 +1,14 @@
-# Weather Chatbot with Rasa Open source 2.0 Conversational AI 
+# Weather Chatbot with Rasa 2.0: open source conversational AI
 
 ## introduction
 
-As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*). Weather chatbot is an excellent use case example for the technology.
+As natural language processing (NLP) technology and chatbot systems over the past few years have evolved quickly, also the usefulness of chatbots has increased. The motivation of chatbots is productivity; they have an instant access to information they refer to and are efficient in assisting users. (Brandtzaeg, 2017, *Why people use chatbots*). Weather chatbot is an excellent use case example for the technology.
 
-The content of a chatbot consists of the personality, conversation flows and the information it can deliver to the user. Personality is created by interactions and responses and by acting differently in different situations. These responses should be designed so that it maximises the engagement between the bot and the user (Katz, 2019, *The Ultimate Guide to chatbot personality*, Chatbots Magazine). An important part of the engagement is the ability to respond to any chitchat. The weather chatbot described here aims to use these principles, however due to the efforts required, in a rather minimalistic way leaving plenty of room for future improvements.
+The content of a chatbot consists of the personality, conversation flows and the information it can deliver to the user. Personality is created by interactions and responses and by acting differently in different situations. These responses should be designed so that it maximises the engagement between the bot and the user (Katz, 2019, *The Ultimate Guide to chatbot personality*, Chatbots Magazine). The weather chatbot described here aims to use these principles, however due to the efforts required, in a rather minimalistic way leaving plenty of room for future improvements. e.g. in the area of how to handle chitchat.
 
 ## Weather data
 
-The weather data format chosen here is defined by OpenWeather (https://openweathermap.org/), which provides weather data freely for developers. Auckland, Wellington, and Christchurch data are prefetched for testing purposes. 
+The weather data format chosen here is defined by OpenWeather (https://openweathermap.org/), which provides weather data freely for developers. Auckland, Wellington, and Christchurch data are prefetched for testing purposes, if API use is not wanted for some reason. 
 
 
 ## Conversation Flow
@@ -22,7 +22,7 @@ The conversation is initiated by the end-user. A greeting or a goodbye should re
 
 ## Implementation
 
-All components defined to support the conversation flow. The end-user intents here are: **greet, goodbye, weather_in_city, weather_without_city, capabilities, how_are_you and who_are_you**.
+All components are defined to support the conversation flow above. The end-user intents here are: **greet, goodbye, weather_in_city, weather_without_city, capabilities, how_are_you and who_are_you**.
 
 In Rasa, the slots can be used for passing information to and back between Rasa and external actions. Three slots are required: **wx_type, city, forecast_period**.
 
@@ -30,7 +30,7 @@ The responses where the personality is also largely created are: **utter_greet, 
 
 External actions are user defined functions written in python. Only one action, **action_wx**, is required. It is split in two separate functionalities here: **actions.py** which receives slots: **wx_type, city & forecast_period** from Rasa. It then queries the weather data for specific city from **wx.py** where a function **wx_city(city)** is defined. The function returns the weather data for a specific city in OpenWeatherMap onecall json format to **action_wx**, which then parses it and forms a response sentense to be passed back to Rasa.
 
-The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of possible examples, explaining to the model how to find the values for the three slots and which intent the user has. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
+The user intents, stories and rules are used for training the NLP model. These intent examples cover tens of different ways of asking questions, and explaining to the model how to find the values for the three slots and what is the intent the user has. The stories contain the conversation flows and rules that will stop any conversation and force a different path. 
 
 
 ## Installation
@@ -38,7 +38,7 @@ The user intents, stories and rules are used for training the NLP model. These i
 Installation assumes existing installation of miniconda or anaconda. 
 https://www.anaconda.com/
 
-### pip & rasa
+### pip & Rasa
 
 Below are the simple steps for creating a virtual environment, install pip and Rasa Open Source 2.0.
 
@@ -60,7 +60,7 @@ rasa init --no-prompt
 ```
 This will create a new directlry, under which rasa creates all necessary directories and files.
 
-Replace all files in the wxbot directory with the files in the project
+Replace all files in the wxbot directory with the files in the project.
 
 ## Train the model and run the bot
 
@@ -84,9 +84,10 @@ rasa shell
 
 ## Activating OpenWeatherMap API
 
-For activating the API, the below needs to be modified and a valid API key inserted. API key is available from https://openweathermap.org/
+Should you wish to activate the API, the below needs to be modified in and a valid API key should be inserted in ```wx.py```. API key is available from https://openweathermap.org/
 
 ```python
 use_openweather_API = True
 API_key = "Insert your key here"
 ```
+
