@@ -91,3 +91,8 @@ use_openweather_API = True
 API_key = "Insert your key here"
 ```
 
+## References
+
+    - Rasa. (n.d.). Rasa: Open source conversational AI. URL: https://rasa.com
+    - OpenWeather (n.d.) Current weather and forecast – OpenWeatehrMap. URL https://openweathermap.org/
+    - Luostari R., (2020) Weather Chatbot with Rasa 2.0: open source conversational AI
